@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy Birthday Papuuu ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#2b1230,#100813 65%);font-family:Georgia,serif;overflow:hidden}
+#phone{width:min(100vw,520px);height:100vh;margin:auto;background:linear-gradient(#fff0f6,#f8c5dc);position:relative;overflow:hidden;color:#7d244c}
+.screen{position:absolute;inset:0;padding:35px 25px 55px;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fade .6s ease}
+.screen.active{display:flex}@keyframes fade{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+h1{font-size:32px;margin:10px 0}h2{font-size:25px}p{font-size:18px;line-height:1.6}
+button{border:0;border-radius:30px;padding:14px 25px;background:#c93672;color:white;font-size:17px;font-weight:bold;box-shadow:0 6px 15px #b43b6844}.love-pop{font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#c93672;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;width:130px;height:85px;white-space:normal}
+.hearts{position:absolute;inset:0;pointer-events:none;opacity:.45}.hearts span{position:absolute;font-size:25px;animation:float 5s infinite ease-in-out}
+@keyframes float{50%{transform:translateY(-35px) rotate(12deg)}}
+.balloon{font-size:72px;cursor:pointer;filter:drop-shadow(0 8px 8px #8885);transition:.25s}.balloon:active{transform:scale(.75)}
+#balloons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px}.cake{font-size:105px;cursor:pointer;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}.rose{font-size:120px;filter:drop-shadow(0 8px 8px #8885)}
+.note{background:#fffaf5;border:1px solid #e8c8d0;border-radius:20px;padding:20px;max-height:55vh;overflow:auto;box-shadow:0 8px 25px #8a315533;text-align:left;font-size:16px;line-height:1.7}
+.gift{font-size:115px;cursor:pointer;animation:bounce 1.3s infinite}@keyframes bounce{50%{transform:translateY(-12px)}}
+.confetti{position:absolute;top:-20px;font-size:22px;animation:fall 3s linear infinite}@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.small{font-size:14px;opacity:.75}#musicBtn{position:absolute;right:12px;top:12px;z-index:20;padding:9px 14px;font-size:13px;background:#fff;color:#c93672;border:1px solid #e9b7ca;box-shadow:0 4px 10px #8a315522}
+</style>
+</head>
+<body><div id="phone">
+<audio id="birthdayMusic" loop preload="auto"><source src="birthday-tune.mp3" type="audio/mpeg"></audio>
+<button id="musicBtn" onclick="toggleMusic()">🎵 Play Tune</button>
+<div class="hearts"><span style="left:8%;top:15%">♥</span><span style="left:80%;top:12%">♡</span><span style="left:15%;top:70%">♥</span><span style="left:85%;top:65%">♡</span><span style="left:50%;top:25%">♥</span></div>
+
+<section class="screen active" id="s1"><div style="font-size:65px">💗</div><h1>Happy Birthday,<br>Papuuu 🥹❤️</h1><p>A tiny surprise made specially for you ✨</p><button onclick="openSurprise()">Open Your Surprise 🎁</button></section>
+
+<section class="screen" id="s2"><h2>Pop all 4 balloons 🎈</h2><p id="count">0 / 4 popped</p>
+<div id="balloons"><div class="balloon" onclick="pop(this)">🎈</div><div class="balloon" onclick="pop(this)">🎈</div><div class="balloon" onclick="pop(this)">🎈</div><div class="balloon" onclick="pop(this)">🎈</div></div><p class="small">Tap each balloon 💗</p></section>
+
+<section class="screen" id="s3"><h2>Make a birthday wish ✨</h2><p>Now… blow the candle 🎂</p><div class="cake" onclick="blow()">🕯️🎂</div><p id="blowText" class="small">Tap the cake to blow the candle</p></section>
+
+<section class="screen" id="s4"><h2>For my Papuuu 🌹</h2><div class="rose">💐</div><p>You make ordinary moments feel special. ❤️</p><button onclick="go(5)">Next ✨</button></section>
+
+<section class="screen" id="s5"><h2>💌 A Message From My Heart</h2>
+<div class="note">Happy Birthday Papuuu ❤️🎂✨<br><br>
+Ninna special day idu, so first of all tumba tumba Happy Birthday! 🥹❤️ Ninna life alli yavaglu happiness, peace, success mattu lots of beautiful moments irli. ✨<br><br>
+Ninu nanage just one person alla, nan heart-ge tumba close aadavnu🫂🫀. Ninna jothe maathado chikka chikka moments, silly fights, jokes, teasing ella nanage tumba special. 🫶🏻❤️ Sometimes words alli helakke agalla, but I genuinely care about you a lot🥹. Adhre ninge nan careless hudgi thara ansuthe😅🤧<br><br>
+Ninna ella dreams nanasagali, ninu yavaglu smile madta happy aagi irbeku. Life alli yenu bandru strong aagi face maadu, because you deserve all the good things in life. ❤️✨<br><br>
+Nange expensive gift kodakke agalla 😅🎁, but ee small gift alli tumba genuine feeling ide. Price chikkadagirbahudu, but it's specially for my Papuuu. 🥹❤️<br><br>
+Once again, Happy Birthday Papuuu! 🎂🥳❤️<br>
+Stay happy, stay blessed and keep smiling always. 🫶🏻<br>
+Your happiness will always be special to me. ❤️✨</div>
+<button onclick="go(6)">One Last Thing… 🎁</button></section>
+
+<section class="screen" id="s6"><h1>One Last Thing…</h1><h3>Tap the gift 🎁</h3><div class="gift" onclick="go(7)">🎁</div><p class="small">There is something waiting inside ❤️</p></section>
+
+<section class="screen" id="s7"><div id="conf"></div><div style="font-size:75px">🧸🎂🐰</div><h1>HAPPY BIRTHDAY<br>PAPUUU! 🥳❤️</h1><p>Lots of love, happiness & beautiful memories for you. 🫂🧿🫀💎💋✨</p>
+<p><b>Stay happy. Keep smiling. Always. 🫶🏻🧿🫀❤️</b></p>
+<p style="font-size:24px">🫂 🧿 🫀 💎 💋 🥹 ❤️ ✨</p><button onclick="go(1)">Replay 🔄</button></section>
+</div>
+<script>
+let popped=0,blown=false;
+const music=document.getElementById("birthdayMusic");
+const musicBtn=document.getElementById("musicBtn");
+function toggleMusic(){ if(music.paused){ music.play().then(()=>musicBtn.textContent="🔇 Pause Tune").catch(()=>{}); } else { music.pause(); musicBtn.textContent="🎵 Play Tune"; } }
+function openSurprise(){ go(2); music.currentTime=0; music.play().then(()=>musicBtn.textContent="🔇 Pause Tune").catch(()=>{}); }
+function go(n){
+  if(n===1) resetSurprise();
+  document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+  document.getElementById('s'+n).classList.add('active');
+  if(n===7) confetti();
+}
+function resetSurprise(){
+  popped=0;
+  music.pause();
+  music.currentTime=0;
+  musicBtn.textContent="🎵 Play Tune";
+  blown=false;
+  document.getElementById('count').textContent='0 / 4 popped';
+  document.querySelectorAll('#balloons .balloon').forEach(el=>{
+    el.dataset.popped='';
+    el.textContent='🎈';
+    el.style.visibility='visible';
+  });
+  document.querySelector('#s3 .cake').textContent='🕯️🎂';
+  document.getElementById('blowText').textContent='Tap the cake to blow the candle';
+  document.getElementById('conf').innerHTML='';
+}
+function pop(el){if(el.dataset.popped)return;el.dataset.popped=1;popped++;document.getElementById('count').textContent=popped+' / 4 popped';el.textContent='I LOVE YOU PAPUUU ❤️';el.classList.add('love-pop');setTimeout(()=>el.style.visibility='hidden',1100);if(popped===4)setTimeout(()=>go(3),1350);}
+function blow(){if(blown)return;blown=true;document.querySelector('#s3 .cake').textContent='🎂✨';document.getElementById('blowText').textContent='Wish made! ❤️';setTimeout(()=>go(4),700);}
+function confetti(){let c=document.getElementById('conf');c.innerHTML='';for(let i=0;i<35;i++){let e=document.createElement('span');e.className='confetti';e.textContent=['🎉','✨','💗','🩷','⭐'][i%5];e.style.left=Math.random()*100+'%';e.style.animationDelay=Math.random()*2+'s';c.appendChild(e);}}
+</script></body></html>
